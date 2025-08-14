@@ -95,7 +95,7 @@ class StibMivbSensor(SensorEntity):
         self._native_value = None
         self._stop_name = None
         self._next_passages = None
-        self._unit = UnitOfTime.MINUTES  # conservé si utilisé par des cartes custom
+        self._unit = UnitOfTime.MINUTES
         self.__icon = None
 
     @Throttle(datetime.timedelta(seconds=30))
