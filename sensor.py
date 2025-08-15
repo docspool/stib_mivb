@@ -61,6 +61,8 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         message_lang = config[CONF_LANG]
 
     session = async_get_clientsession(hass)
+    if not api_key.lower().startswith("apikey "):
+        api_key = f"Apikey {api_key}"
     api = ODStibMivb(api_key, session)
 
     sensors = []
